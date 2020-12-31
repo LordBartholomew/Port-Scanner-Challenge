@@ -28,7 +28,7 @@ def scan(host, port):
 
 def main():
 	host = "127.0.0.1"
-	ports = (21, 22, 443, 4444)
+	ports = (21, 22, 80, 443)
 
 	logging.info("Connecting to {0}".format(host))
 	print("Attempting to connect to {0}".format(host))
