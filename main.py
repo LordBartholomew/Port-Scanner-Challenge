@@ -96,10 +96,10 @@ def main():
 
 	serv[1].setLHOST("127.0.0.1")
 	serv[1].setLPORT(22)
-	
+
 	serv[2].setLHOST("127.0.0.1")
 	serv[2].setLPORT(80)
-	
+
 	serv[3].setLHOST("127.0.0.1")
 	serv[3].setLPORT(443)
 
@@ -111,4 +111,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
- 
