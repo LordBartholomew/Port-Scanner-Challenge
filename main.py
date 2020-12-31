@@ -1,4 +1,4 @@
-import socket, logging, time
+import socket, logging
 from threading import Thread
 
 logging.basicConfig(filename="main.log", level=logging.DEBUG)
