@@ -90,6 +90,8 @@ def main():
 	serv = list()
 	serv.append(service())
 	serv.append(service())
+	serv.append(service())
+	serv.append(service())
 
 	serv[0].setLHOST("127.0.0.1")
 	serv[0].setLPORT(21)
