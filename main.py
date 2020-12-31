@@ -10,7 +10,7 @@ def trash_way_to_make_static_var():
 	id += 1
 	return id
 
-class services():
+class service():
 	def __init__(self):
 		self.ID = trash_way_to_make_static_var()
 		self.LHOST = None
@@ -78,10 +78,10 @@ class services():
 def main():
 	## array of services
 	serv = list()
-	serv.append(services())
-	serv.append(services())
-	serv.append(services())
-	serv.append(services())
+	serv.append(service())
+	serv.append(service())
+	serv.append(service())
+	serv.append(service())
 
 	serv[0].setLHOST("127.0.0.1")
 	serv[0].setLPORT(21)
