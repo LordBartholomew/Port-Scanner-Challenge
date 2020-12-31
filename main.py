@@ -4,7 +4,7 @@ from threading import Thread
 logging.basicConfig(filename="main.log", level=logging.DEBUG)
 
 ## static var
-id=-1
+id = -1
 def newid():
 	global id
 	id += 1
@@ -17,33 +17,21 @@ class service():
 		self.LPORT = None
 
 	def setLHOST(self, host):
-		try:
-			self.LHOST = str(host)
-			logging.info("{0}:LHOST => '{1}'".format(self.ID, self.LHOST))
+		self.LHOST = str(host)
+		logging.info("{0}:LHOST => '{1}'".format(self.ID, self.LHOST))
 
-		except Exception as e:
-			self.LHOST = None
-			logging.error("{0}:{1}".format(self.ID, e))
-			print("{0}:{1}".format(self.ID, e))
 
 	def setLPORT(self, port):
 		try:
 			int(port)
 
 		except TypeError:
-			self.LHOST = None
 			logging.error("{0}:Invalid port type.".format(self.ID))
 			print("{0}:Invalid port type.".format(self.ID))
 			return
 
-		try:
-			self.LPORT = int(port)
-			logging.info("{0}:LPORT => '{1}'".format(self.ID, self.LPORT))
-
-		except Exception as e:
-			self.LHOST = None
-			logging.error("{0}:{1}".format(self.ID, e))
-			print("{0}:{1}".format(self.ID, e))
+		self.LPORT = int(port)
+		logging.info("{0}:LPORT => '{1}'".format(self.ID, self.LPORT))
 
 	def run(self):
 		if self.LHOST == None:
@@ -55,6 +43,7 @@ class service():
 			logging.error("{0}:LPORT has not been set.".format(self.ID))
 			print("{0}:LPORT has not been set.".format(self.ID))
 			return
+
 		try:
 			sock = socket.socket()
 			sock.bind((self.LHOST, self.LPORT))
@@ -66,10 +55,10 @@ class service():
 			print("{0}:{1}".format(self.ID, e))
 			return
 
-		try:
-			logging.info("{0}:Starting Server on Port {1}.".format(self.ID, self.LPORT))
-			print("{0}:Starting Server on Port {1}.".format(self.ID, self.LPORT))
+		logging.info("{0}:Starting Server on Port {1}.".format(self.ID, self.LPORT))
+		print("{0}:Starting Server on Port {1}.".format(self.ID, self.LPORT))
 
+		try:
 			while True:
 				client, addr = sock.accept()
 				logging.info("{0}:Incoming connection from {1[0]}".format(self.ID, addr))
