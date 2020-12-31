@@ -60,9 +60,9 @@ class service():
 
 		try:
 			while True:
-				client, addr = sock.accept()
-				logging.info("{0}:Incoming connection from {1[0]}".format(self.ID, addr))
-				print("{0}:Incoming connection from {1[0]}".format(self.ID, addr))
+				client, address = sock.accept()
+				logging.info("{0}:Incoming connection from {1[0]}".format(self.ID, address))
+				print("{0}:Incoming connection from {1[0]}".format(self.ID, address))
 				client.send("Thank you for connecting to port {0}".format(self.LPORT).encode())
 				client.close()
 
