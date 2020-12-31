@@ -73,6 +73,9 @@ class service():
 		except Exception as e:
 			logging.error("{0}:{1}".format(self.ID, e))
 			print("{0}:{1}".format(self.ID, e))
+		
+		finally:
+			sock.close()
 
 
 def main():
